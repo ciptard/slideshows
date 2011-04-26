@@ -4,7 +4,6 @@ class SlideshowsController extends SlideshowsAppController {
 	var $name = 'Slideshows';
 
 	function admin_index() {
-		//Testing
 		$this->Slideshow->recursive = 0;
 		$this->set('slideshows', $this->paginate());
 	}
