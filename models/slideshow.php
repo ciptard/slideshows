@@ -1,5 +1,5 @@
 <?php
-class Slideshow extends SlideshowAppModel {
+class Slideshow extends SlideshowsAppModel {
 	var $name = 'Slideshow';
 	var $displayField = 'name';
 	var $validate = array(

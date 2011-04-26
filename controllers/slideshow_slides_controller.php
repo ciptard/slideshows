@@ -1,5 +1,5 @@
 <?php
-class SlideshowSlidesController extends SlideshowAppController {
+class SlideshowSlidesController extends SlideshowsAppController {
 
 	var $name = 'SlideshowSlides';
 
