@@ -11,9 +11,9 @@
 			<?php echo $this->Html->link($slideshowSlide['Slideshow']['name'], array('controller' => 'slideshows', 'action' => 'view', $slideshowSlide['Slideshow']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('File'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Img'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $slideshowSlide['SlideshowSlide']['file']; ?>
+			<?php echo $slideshowSlide['SlideshowSlide']['img']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Text'); ?></dt>

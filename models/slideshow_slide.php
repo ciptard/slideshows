@@ -12,7 +12,7 @@ class SlideshowSlide extends SlideshowsAppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'file' => array(
+		'img' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',

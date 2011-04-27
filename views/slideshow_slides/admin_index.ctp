@@ -4,7 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('slideshow_id');?></th>
-			<th><?php echo $this->Paginator->sort('file');?></th>
+			<th><?php echo $this->Paginator->sort('img');?></th>
 			<th><?php echo $this->Paginator->sort('text');?></th>
 			<th><?php echo $this->Paginator->sort('link');?></th>
 			<th><?php echo $this->Paginator->sort('active');?></th>
@@ -27,7 +27,7 @@
 		<td>
 			<?php echo $this->Html->link($slideshowSlide['Slideshow']['name'], array('controller' => 'slideshows', 'action' => 'view', $slideshowSlide['Slideshow']['id'])); ?>
 		</td>
-		<td><?php echo $slideshowSlide['SlideshowSlide']['file']; ?>&nbsp;</td>
+		<td><?php echo $slideshowSlide['SlideshowSlide']['img']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['text']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['link']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['active']; ?>&nbsp;</td>

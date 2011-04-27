@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('slideshow_id');
-		echo $this->Form->input('file');
+		echo $this->Form->input('img');
 		echo $this->Form->input('text');
 		echo $this->Form->input('link');
 		echo $this->Form->input('active');

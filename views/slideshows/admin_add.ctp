@@ -5,9 +5,9 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('active');
-		echo $this->Form->input('start');
-		echo $this->Form->input('end');
-		echo $this->Form->input('slideshow_slide_count');
+		echo $this->Form->input('start', array('type'=>'text'));
+		echo $this->Form->input('end', array('type'=>'text'));
+		//echo $this->Form->input('slideshow_slide_count');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
