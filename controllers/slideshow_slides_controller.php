@@ -28,6 +28,9 @@ class SlideshowSlidesController extends SlideshowsAppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			//pr($this->data);
+			//$getslideshows = array_filter($this->data['SlideshowSlide']);
+			//$this->data = Set::remove($this->data, 'SlideshowSlide');
+			//$this->data = Set::insert($this->data, 'SlideshowSlide', $getslideshows);
 			// upload the file to the server  
 			$fileOK = $this->_uploadFiles('img', $this->data['File']);
 			// if file was uploaded ok
@@ -148,10 +151,22 @@ class SlideshowSlidesController extends SlideshowsAppController {
 
 	function admin_edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid slideshow slide', true));
+			$this->Session->setFlash(__('Invalid slideshow slide id', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+			//$getslideshows = array_filter($this->data['SlideshowSlide']);
+			//$this->data = Set::remove($this->data, 'SlideshowSlide');
+			//$this->data = Set::insert($this->data, 'SlideshowSlide', $getslideshows);
+			if($this->data['File']['image']['size']>0){
+				// upload the file to the server  
+				$fileOK = $this->_uploadFiles('img', $this->data['File']);
+				// if file was uploaded ok
+				if(array_key_exists('urls', $fileOK)) {
+					// save the url in the form data
+					$this->data['SlideshowSlide']['img'] = $fileOK['urls'][0];
+				}
+			}
 			if ($this->SlideshowSlide->save($this->data)) {
 				$this->Session->setFlash(__('The slideshow slide has been saved', true));
 				$this->redirect(array('action' => 'index'));

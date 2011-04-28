@@ -41,6 +41,15 @@ class Slideshow extends SlideshowsAppModel {
 			'counterQuery' => ''
 		)
 	);
-
+	
+	function beforeSave() {
+		if (empty($this->data['Slideshow']['start'])) {
+	    $this->data['Slideshow']['start'] = null;
+		}
+		if (empty($this->data['Slideshow']['end'])) {
+	    $this->data['Slideshow']['end'] = null;
+		}
+		return true;
+	}
 }
 ?>

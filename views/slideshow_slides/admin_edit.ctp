@@ -1,16 +1,21 @@
+<?php echo $this->Html->scriptStart(array('inline'=>false));?>
+$(function() {
+		$( "#SlideshowSlideStart, #SlideshowSlideEnd" ).datepicker({dateFormat: 'yy-mm-dd'});
+	});
+<?php echo $this->Html->scriptEnd();?>
 <div class="slideshowSlides form">
-<?php echo $this->Form->create('SlideshowSlide');?>
+<?php echo $this->Form->create('SlideshowSlide', array('type'=>'file'));?>
 	<fieldset>
 		<legend><?php __('Admin Edit Slideshow Slide'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('slideshow_id');
-		echo $this->Form->input('img');
+		echo $this->Form->file('File.image');
 		echo $this->Form->input('text');
 		echo $this->Form->input('link');
 		echo $this->Form->input('active');
-		echo $this->Form->input('start');
-		echo $this->Form->input('end');
+		echo $this->Form->input('start', array('type'=>'text'));
+		echo $this->Form->input('end', array('type'=>'text'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

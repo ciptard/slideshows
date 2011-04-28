@@ -1,3 +1,8 @@
+<?php echo $this->Html->scriptStart(array('inline'=>false));?>
+$(function() {
+		$( "#SlideshowStart, #SlideshowEnd" ).datepicker({dateFormat: 'yy-mm-dd'});
+	});
+<?php echo $this->Html->scriptEnd();?>
 <div class="slideshows form">
 <?php echo $this->Form->create('Slideshow');?>
 	<fieldset>

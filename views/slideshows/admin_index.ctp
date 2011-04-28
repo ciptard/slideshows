@@ -7,8 +7,6 @@
 			<th><?php echo $this->Paginator->sort('active');?></th>
 			<th><?php echo $this->Paginator->sort('start');?></th>
 			<th><?php echo $this->Paginator->sort('end');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th><?php echo $this->Paginator->sort('slideshow_slide_count');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -26,8 +24,6 @@
 		<td><?php echo $slideshow['Slideshow']['active']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['start']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['end']; ?>&nbsp;</td>
-		<td><?php echo $slideshow['Slideshow']['created']; ?>&nbsp;</td>
-		<td><?php echo $slideshow['Slideshow']['modified']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['slideshow_slide_count']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $slideshow['Slideshow']['id'])); ?>

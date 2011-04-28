@@ -32,6 +32,14 @@ class SlideshowSlide extends SlideshowsAppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'start' => array(
+			'date' => array(
+				'rule' => array('date', 'ymd'),
+				'message' => 'This must be a date (YYYY-MM-DD)',
+				'required' => false,
+				'allowEmpty' => true
+			),
+		),
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -41,8 +49,27 @@ class SlideshowSlide extends SlideshowsAppModel {
 			'foreignKey' => 'slideshow_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'counterCache' => true
 		)
 	);
+	
+	function beforeSave() {
+		if (empty($this->data['SlideshowSlide']['start'])) {
+	    $this->data['SlideshowSlide']['start'] = null;
+		}
+		if (empty($this->data['SlideshowSlide']['end'])) {
+	    $this->data['SlideshowSlide']['end'] = null;
+		}
+		if (empty($this->data['SlideshowSlide']['link'])) {
+			$this->data['SlideshowSlide']['link'] = null;
+		}
+		if (empty($this->data['SlideshowSlide']['text'])) {
+			$this->data['SlideshowSlide']['text'] = null;
+		}
+		return true;
+	}
+
+	
 }
 ?>

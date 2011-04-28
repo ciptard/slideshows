@@ -10,8 +10,6 @@
 			<th><?php echo $this->Paginator->sort('active');?></th>
 			<th><?php echo $this->Paginator->sort('start');?></th>
 			<th><?php echo $this->Paginator->sort('end');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -30,11 +28,9 @@
 		<td><?php echo $slideshowSlide['SlideshowSlide']['img']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['text']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['link']; ?>&nbsp;</td>
-		<td><?php echo $slideshowSlide['SlideshowSlide']['active']; ?>&nbsp;</td>
+		<td><?php echo ($slideshowSlide['SlideshowSlide']['active']==1)?"Yes":"No"; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['start']; ?>&nbsp;</td>
 		<td><?php echo $slideshowSlide['SlideshowSlide']['end']; ?>&nbsp;</td>
-		<td><?php echo $slideshowSlide['SlideshowSlide']['created']; ?>&nbsp;</td>
-		<td><?php echo $slideshowSlide['SlideshowSlide']['modified']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $slideshowSlide['SlideshowSlide']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $slideshowSlide['SlideshowSlide']['id'])); ?>

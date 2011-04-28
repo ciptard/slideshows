@@ -60,15 +60,12 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Slideshow Id'); ?></th>
-		<th><?php __('File'); ?></th>
+		<th><?php __('Img'); ?></th>
 		<th><?php __('Text'); ?></th>
 		<th><?php __('Link'); ?></th>
 		<th><?php __('Active'); ?></th>
 		<th><?php __('Start'); ?></th>
 		<th><?php __('End'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -81,15 +78,12 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $slideshowSlide['id'];?></td>
-			<td><?php echo $slideshowSlide['slideshow_id'];?></td>
-			<td><?php echo $slideshowSlide['file'];?></td>
+			<td><?php echo $slideshowSlide['img'];?></td>
 			<td><?php echo $slideshowSlide['text'];?></td>
 			<td><?php echo $slideshowSlide['link'];?></td>
-			<td><?php echo $slideshowSlide['active'];?></td>
+			<td><?php echo ($slideshowSlide['active']==1)?"Yes":"No";?></td>
 			<td><?php echo $slideshowSlide['start'];?></td>
 			<td><?php echo $slideshowSlide['end'];?></td>
-			<td><?php echo $slideshowSlide['created'];?></td>
-			<td><?php echo $slideshowSlide['modified'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'slideshow_slides', 'action' => 'view', $slideshowSlide['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'slideshow_slides', 'action' => 'edit', $slideshowSlide['id'])); ?>

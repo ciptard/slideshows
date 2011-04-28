@@ -1,3 +1,8 @@
+<?php echo $this->Html->scriptStart(array('inline'=>false));?>
+$(function() {
+		$( "#SlideshowStart, #SlideshowEnd" ).datepicker({dateFormat: 'yy-mm-dd'});
+	});
+<?php echo $this->Html->scriptEnd();?>
 <div class="slideshows form">
 <?php echo $this->Form->create('Slideshow');?>
 	<fieldset>
@@ -6,8 +11,8 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('active');
-		echo $this->Form->input('start');
-		echo $this->Form->input('end');
+		echo $this->Form->input('start', array('type'=>'text'));
+		echo $this->Form->input('end', array('type'=>'text'));
 		echo $this->Form->input('slideshow_slide_count');
 	?>
 	</fieldset>
