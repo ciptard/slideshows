@@ -25,7 +25,12 @@ class SlideshowSlidesController extends SlideshowsAppController {
 		$this->set('slideshowSlide', $this->SlideshowSlide->read(null, $id));
 	}
 
-	function admin_add() {
+	function admin_add($id = null) {
+		if (!$id && empty($this->data)) {
+			$id = $id;
+			$this->Session->setFlash(__('Invalid slideshow slide id', true));
+			$this->redirect(array('controller'=>'slideshow','action' => 'index'));
+		}
 		if (!empty($this->data)) {
 			//pr($this->data);
 			//$getslideshows = array_filter($this->data['SlideshowSlide']);
@@ -50,8 +55,9 @@ class SlideshowSlidesController extends SlideshowsAppController {
 			} else {
 				$this->Session->setFlash(__('The slideshow slide could not be saved. Error with uploading the graphic. Please, try again.', true));
 			}
-			
+			$id = $this->data['SlideshowSlide']['slideshow_id'];
 		}
+		$this->set(compact('id'));
 		$slideshows = $this->SlideshowSlide->Slideshow->find('list');
 		$this->set(compact('slideshows'));
 	}

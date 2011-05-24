@@ -21,7 +21,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $slideshow['Slideshow']['id']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['name']; ?>&nbsp;</td>
-		<td><?php echo $slideshow['Slideshow']['active']; ?>&nbsp;</td>
+		<td><?php echo ($slideshow['Slideshow']['active']==1)?"Yes":"No"; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['start']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['end']; ?>&nbsp;</td>
 		<td><?php echo $slideshow['Slideshow']['slideshow_slide_count']; ?>&nbsp;</td>
@@ -51,7 +51,5 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Slideshow', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Slideshow Slides', true), array('controller' => 'slideshow_slides', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Slideshow Slide', true), array('controller' => 'slideshow_slides', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

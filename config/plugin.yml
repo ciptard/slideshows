@@ -1,0 +1,11 @@
+name: Slideshows
+description: Slideshows plugin is for front page slideshow
+
+author: Kory Marks
+authorEmail: kory.marks@mac.com
+authorUrl: http://korymarks.com
+
+dependencies:
+  plugins:
+    - acl
+    - extensions

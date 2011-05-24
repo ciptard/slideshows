@@ -50,8 +50,6 @@
 		<li><?php echo $this->Html->link(__('Delete Slideshow', true), array('action' => 'delete', $slideshow['Slideshow']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $slideshow['Slideshow']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Slideshows', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Slideshow', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Slideshow Slides', true), array('controller' => 'slideshow_slides', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Slideshow Slide', true), array('controller' => 'slideshow_slides', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -96,7 +94,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Slideshow Slide', true), array('controller' => 'slideshow_slides', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('New Slideshow Slide', true), array('controller' => 'slideshow_slides', 'action' => 'add', $slideshow['Slideshow']['id']));?> </li>
 		</ul>
 	</div>
 </div>

@@ -8,11 +8,11 @@ $(function() {
 	<fieldset>
 		<legend><?php __('Admin Add Slideshow Slide'); ?></legend>
 	<?php
-		echo $this->Form->input('slideshow_id');
+		echo $this->Form->input('slideshow_id', array('type'=>'hidden', 'default'=>$id));
 		echo $this->Form->file('File.image', array('label'=>'Image'));
 		echo $this->Form->input('text');
 		echo $this->Form->input('link');
-		echo $this->Form->input('active');
+		echo $this->Form->input('active', array('checked'=>true));
 		echo $this->Form->input('start', array('type'=>'text'));
 		echo $this->Form->input('end', array('type'=>'text'));
 	?>
